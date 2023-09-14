@@ -1,0 +1,28 @@
+name: "Heroku Auto Deployment"
+author: "Elay Gelbart"
+description: "Heroku Deployment"
+inputs:
+  herokuAppName:
+    description: "Name of the heroku application to which the build is to be sent."
+    required: true
+  herokuApiKey:
+    description: "Heroku API key"
+    required: true
+  useDocker:
+    description: "Deploy the container image (Dockerfile) to Heroku"
+    default: "false"
+    required: false
+  branch:
+    description: "Selected branch to deployment"
+    default: "HEAD"
+    required: false
+  dir:
+    description: "Selected Application Dir"
+    default: ""
+    required: false
+runs:
+  using: "node20"
+  main: "dist/index.js"
+branding:
+  icon: 'server'
+  color: 'purple'
